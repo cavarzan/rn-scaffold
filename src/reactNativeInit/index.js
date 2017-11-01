@@ -10,8 +10,8 @@ export default async argv => {
   const appName = await prompt('App Name (e.g. Expresso): ')
   const reactNativeVersion = argv.reactNativeVersion || '0.48.4'
 
-  executeCommand(`react-native init --version react-native@${reactNativeVersion} RNScaffold`)
+  executeCommand(`react-native init --version react-native@${reactNativeVersion}`)
 
-  executeCommand(`(cd RNScaffold && react-native-rename ${appName} -b ${bundleId})`)
-  executeCommand(`mv RNScaffold ${appName}`)
+  executeCommand(`(react-native-rename ${appName} -b ${bundleId})`)
+  
 }
